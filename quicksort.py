@@ -1,5 +1,7 @@
 # Python3 implementation of QuickSort
 
+import sys
+import random
 
 # Function to find the partition position
 def partition(array, low, high):
@@ -45,10 +47,13 @@ def quick_sort(array, low, high):
 
 		
 # Código para rodar o algoritmo
+
+quantidade = int(sys.argv[1])
 array = []
-with open("num.txt") as fp:
-    for line in fp:
-        array.append(int(line))
+for i in range(quantidade):
+    array.append(random.randrange(0, 1000))
+
+print(array)
 
 quick_sort(array, 0, len(array) - 1)
 
